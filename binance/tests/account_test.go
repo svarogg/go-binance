@@ -7,6 +7,7 @@ import (
 )
 
 
+
 func TestGetTrades(t *testing.T) {
     client := binance.New(os.Getenv("BINANCE_KEY"), os.Getenv("BINANCE_SECRET"))
 
@@ -43,6 +44,17 @@ func TestGetDeposits(t *testing.T) {
     }
 
     t.Logf("%+v\n", deposits)
+}
+
+func TestGetTradesFromOrder(t *testing.T) {
+    client := binance.New(os.Getenv("BINANCE_KEY"), os.Getenv("BINANCE_SECRET"))
+
+    trades, err := client.GetTradesFromOrder("LINKETH", 10107102)
+    if err != nil {
+        t.Fatal(err)
+    }
+
+    t.Logf("%+v\n", trades)
 }
 
 /*

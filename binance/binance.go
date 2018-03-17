@@ -14,7 +14,7 @@ package binance
 //"errors"
 
 const (
-	BaseUrl = "https://us.binance.com"
+	BaseUrl = "https://api.binance.com"
 )
 
 type Binance struct {
